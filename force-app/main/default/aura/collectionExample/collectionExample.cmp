@@ -1,0 +1,28 @@
+<aura:component controller="getAllObjects" implements="flexipage:availableForRecordHome,force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="finalResult" type="List[]"/>
+    <lightning:card>
+        <b><h1> collectionExample </h1></b>
+        <p> This tag for Paragraph and description</p>
+        <br></br>
+        <lightning:input name="input1" label="InputValue1"  placeholder="Enter a Value.." aura:id="inpval1" required="false"></lightning:input>
+        <lightning:input name="input2" label="InputValue2"  placeholder="Enter a Value.." aura:id="inpval2" required="true"></lightning:input>
+        <lightning:input name="input3" label="InputValue3"  placeholder="Enter a Value.." aura:id= "inpval3" required="true"></lightning:input>
+        <lightning:input name="input4" label="InputValue4"  placeholder="Enter a Value.." aura:id="inpval4" required="true"></lightning:input>
+        <lightning:select name="select" label="Rating" aura:id="select">
+                          <option Value ="" > Choose one..</option>;
+                          <option Value ="Hot" > Hot</option>;
+                          <option Value ="Warm" > Warm</option>;
+                          <option Value ="Cold" > cold</option>;
+         
+                     </lightning:select>                     
+                                         
+        <br></br>
+        <!--<b><h1>Final Result is : {!v.finalResult}</h1></b>-->
+        <br></br>
+        <aura:iteration items="{!v.finalResult}" var="value">
+            <h1> {!value} </h1>
+        </aura:iteration>
+        <lightning:button variant="brand" label="List Collection" title="ListCollection" onClick="{!c.listButtonClick}"/>
+        
+    </lightning:card>
+</aura:component>

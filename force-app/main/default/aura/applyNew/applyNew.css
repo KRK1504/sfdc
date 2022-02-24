@@ -1,0 +1,9 @@
+.THIS .centersectiontitle {
+ 
+    background-position: center;
+    margin: 10px 0 25px;
+    min-height: 20px;
+    text-align: center;
+    font-size:25px;
+    color:white
+}

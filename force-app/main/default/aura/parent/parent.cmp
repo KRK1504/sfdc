@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="eventMessage" type="String" />
+    <aura:handler name="sampleCmpEvent" event="c:sampleComponentEvent" action="{!c.parentComponent}" />
+    <div class ="slds-box" style="background-color:pink;" >
+        <p> {!v.eventMessage} </p>
+    </div>
+    <br/>
+    <br/>
+    <c:child/>
+</aura:component>

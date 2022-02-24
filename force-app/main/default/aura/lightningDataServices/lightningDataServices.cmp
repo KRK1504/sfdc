@@ -1,0 +1,20 @@
+<aura:component implements="lightning:actionOverride,force:hasRecordId,flexipage:availableForRecordHome,force:appHostable,flexipage:availableForAllpageTypes">
+ 
+    <aura:attribute name="recordId" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getAccountInfo}"/> 
+    <aura:attribute name="fields" type="string[]" default ="['Name', 'Industry','Rating']"/>       
+    
+    <div class="myDiv">
+        Edit Account Record                  
+    </div>
+    
+    <lightning:card>
+        <lightning:recordForm recordId="{!v.recordId}" 
+                              objectApiName="Account"
+                              mode="edit"
+                              fields="{!v.fields}"
+                              onSuccess="{!c.handleSuccess}"
+                              onError="{!c.handleError}"/>
+                           
+                              </lightning:card>
+            </aura:component>

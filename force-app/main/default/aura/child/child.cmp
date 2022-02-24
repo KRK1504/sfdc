@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:registerEvent name ="sampleCmpEvent" type="c:sampleComponentEvent" />
+    <lightning:card title="Component Event Example" >
+        <lightning:input type="text" aura:id="input1" label="Enter the Value" />
+        <lightning:button label="Click to fire the Event" variant="brand" onclick="{!c.childComponent}" />
+    </lightning:card>
+</aura:component>

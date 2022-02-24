@@ -1,0 +1,9 @@
+<aura:component implements = "force:apphostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome">
+    <aura:attribute name = 'num1' type = 'Integer' default = '15'></aura:attribute>
+    <aura:attribute name = 'num2' type = 'Integer' default = '20'></aura:attribute>
+    <aura:attribute name = 'sum' type = 'Integer'></aura:attribute>
+    <div>
+        <p>Add</p><lightning:button label = 'Add' onclick = '{!c.addMethod}'/>
+        <p>{!v.num1} + {!v.num2} = {!v.sum}</p>
+    </div>
+</aura:component>

@@ -1,0 +1,39 @@
+<aura:component controller="getData" implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:appHostable">
+    <aura:attribute name="totalRecord" type="Account[]"/>
+    <aura:attribute name="isResultisThere" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.getRecord}" />
+    <aura:attribute name="columns" type="List[]"/>
+    <lightning:card>
+        
+          <!--  <table>
+                <thead>
+                    <tr>
+                        <th scope="col"> Name </th>
+                        <th scope="col"> Father_Name__c </th>
+                        <th scope="col"> Mobile_Number__c </th>
+                        <th scope="col"> Circle__c </th>
+                        <th scope="col"> Connection_Load__c </th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <aura:iteration items="{!v.finalResult}" var="nc" >
+                        <tr> 
+                            <td> {!nc.Name} </td>
+                            <td> {!nc.Father_Name__c} </td>
+                            <td> {!nc.Mobile_Number__c} </td>
+                            <td> {!nc.Circle__c} </td>
+                            <td> {!nc.Connection_Load__c} </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table> -->
+            <div style="height: 300px">
+            <lightning:datatable data="{!v.finalResult}" column="{!v.columns}"
+                                 keyField="Id"
+                                 hideCheckColumn="true" />
+                </div>
+        
+       <!--   <lightning:button variant="brand" label="Get Records" title="getRecords" onClick="{!c.getRecord}" /> -->
+    </lightning:card>
+    
+</aura:component>

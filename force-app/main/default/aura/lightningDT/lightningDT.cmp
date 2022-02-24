@@ -1,0 +1,19 @@
+<aura:component controller="getData" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordList" type="List"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="sortedBy" type="String" default="Name"/>
+    <aura:attribute name="sortedDirection" type="string" default="asc" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <lightning:card>
+        <lightning:layout multipleRows="true" horizontalAlign="center">
+            <lightning:layoutItem padding="around-small" size="2">
+                <lightning:datatable keyField="id" data="{! v.recordList}"
+                                     columns="{! v.columns}"
+                                     hideCheckboxColumn="true"
+                                     onsort="{!c.updateSorting}"
+                                     sortedBy="{!v.sortedBy}"
+                                     sortedDirection="{!v.sortedDirection}"  />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

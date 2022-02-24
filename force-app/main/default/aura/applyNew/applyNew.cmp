@@ -1,0 +1,41 @@
+<aura:component implements= "lightning:actionoverride,force:hasRecordId,flexipage:availableForRecordHome,force:appHostable,flexipage:availableForAllPageTypes">
+ <aura:attribute name="recordId" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.newConnection}"/>
+    <aura:attribute name="fields" type="string[]" default="['Name', 'Father_Name__c','Mobile_Number__c','Address__c','Circle__c','Mandal__c','Connection_Load__c']"/>
+    <div class="row" >
+
+        <div class="twelve columns" style="width:100%">
+            <div class="centersectiontitle">
+                <h4>Online New Connection Registrations</h4>
+            </div>
+        </div>
+        <div class="twelve columns" style=" background-color:#f7f7f7;padding:20px">
+
+
+
+
+            <div class="alert-success" style="margin:10px;">Online New Connection Registration for LT(below 100HP/75KW) 
+             	<lightning:button variant="brand" label="Apply" title="Apply here"  class="slds-var-m-left_x-small" >
+    </lightning:button>
+</div>
+            <div class="alert-success" style="margin:10px;"><a href="http://apspdcl.in/CSC_Complaints/htpages/HTNewConn_Home.jsp" target="_blank" style="color:#29135c; font-weight:bold; padding-top:10px;">Online New Connection Registration for HT(above 70KVA)</a></div>
+            <div class="alert-success" style="margin:10px;"><a href="http://apspdcl.in/CSC/reports/searchRegno.jsp" target="_blank" style="color:#29135c; font-weight:bold; padding-top:10px;">Application Status</a></div>
+            <div class="alert-success" style="margin:10px;"><a href="http://apspdcl.in/CSC/forms/BillDeskDemandDetails.jsp" target="_blank" style="color:#29135c; font-weight:bold; padding-top:10px;">Amounts to be paid for New Service Connections</a></div>
+            <!-- <div class="alert-success" style="margin:10px;"><a href="http://apspdcl.in/DELC/" target="_blank" style="color:#29135c; font-weight:bold; padding-top:10px;">Domestic Additional load calculator to know your connected load</a></div> -->
+            <div class="alert-success" style="margin:10px;"><a href="https://www.apspdcl.in/CSC_Complaints/" target="_blank" style="color:#29135c; font-weight:bold; padding-top:10px;">Online Service Request Registration</a></div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</aura:component>

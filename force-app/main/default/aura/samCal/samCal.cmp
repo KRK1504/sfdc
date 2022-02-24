@@ -1,0 +1,19 @@
+<aura:component implements= "lightning:actionoverride,force:hasRecordId,flexipage:availableForRecordHome,force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="recordId" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.samCal}"/>
+    <aura:attribute name="fields" type="string[]" default="['Name', 'Industry','Rating','Phone']"/>
+    <lightning:card>
+        <div class="myDiv" >
+            <h1>Edit Account Record</h1>
+        </div>
+        
+        <lightning:recordForm recordId="{!v.recordId}"
+                              objectApiName="Account"
+                              mode="Edit"
+                              fields="{!v.fields}"
+                              onsuccess ="{!c.handleSuccess}" 
+                              onerror="{!c.handleError}" />
+        
+    </lightning:card>
+    
+</aura:component>

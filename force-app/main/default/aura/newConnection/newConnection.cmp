@@ -1,0 +1,19 @@
+<aura:component implements= "lightning:actionoverride,force:hasRecordId,flexipage:availableForRecordHome,force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="recordId" type="string"/>	
+    <aura:handler name="init" value="{!this}" action="{!c.newConnection}"/>
+    <aura:attribute name="fields" type="string[]" default="['Name', 'Father_Name__c','Mobile_Number__c','Address__c','Circle__c','Mandal__c','Connection_Load__c']"/>
+    <lightning:card  title=" New Connection Registrations">
+
+
+	<lightning:recordForm recordId="{!v.recordId}"
+                          layout="compact"
+						  objectApiName="New_Connection__c"
+						  mode="Edit"
+						  fields="{!v.fields}"
+						  onsuccess ="{!c.handleSuccess}" 
+                          
+						   />
+	
+</lightning:card>
+
+</aura:component>
